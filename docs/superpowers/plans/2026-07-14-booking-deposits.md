@@ -111,7 +111,7 @@ import { verifyStripeSignature, verifySquareSignature } from "../lib/booking/dep
 import { depositPlanFor } from "../lib/booking/deposits/plan";
 
 check("stripe webhook signature verifies and rejects", () => {
-  const secret = "whsec_test";
+  const secret = "dummy_placeholder_secret";
   const body = '{"id":"evt_1"}';
   const t = 1_800_000_000;
   const v1 = createHmac("sha256", secret).update(`${t}.${body}`).digest("hex");
